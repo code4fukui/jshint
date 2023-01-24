@@ -1,4 +1,4 @@
-"use strict";
+const exports = {};
 
 // These are the JSHint boolean options.
 exports.bool = {
@@ -1117,3 +1117,5 @@ exports.noenforceall = {
   strict: true,
   regexpu: true
 };
+
+export default exports;

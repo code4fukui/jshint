@@ -18,8 +18,6 @@
  * For more information on this behavior, see the following blog post:
  * https://bocoup.com/blog/whats-in-a-function-name
  */
-"use strict";
-
 function NameStack() {
   this._stack = [];
 }
@@ -91,4 +89,4 @@ NameStack.prototype.infer = function() {
   return prefix + nameToken.value;
 };
 
-module.exports = NameStack;
+export default NameStack;

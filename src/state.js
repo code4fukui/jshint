@@ -1,5 +1,4 @@
-"use strict";
-var NameStack = require("./name-stack.js");
+import NameStack from "./name-stack.js";
 
 var state = {
   syntax: {},
@@ -202,4 +201,4 @@ var state = {
   }
 };
 
-exports.state = state;
+export default state;

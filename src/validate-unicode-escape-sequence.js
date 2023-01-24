@@ -2,7 +2,7 @@
  * Determine whether a given string is a valid UnicodePropertyValueExpression.
  */
 
-"use strict";
+const exports = {};
 
 module.exports = function validate(sequence) {
   var equalSignIndex = sequence.indexOf("=");
@@ -532,3 +532,5 @@ s.Yi = true;
 s.Yiii = true;
 s.Zanabazar_Square = true;
 s.Zanb = true;
+
+export default exports;

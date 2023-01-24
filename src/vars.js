@@ -1,6 +1,6 @@
 // jshint -W001
 
-"use strict";
+const exports = {};
 
 // Identifiers provided by the ECMAScript standard.
 
@@ -813,3 +813,5 @@ exports.jasmine = {
   // Jasmine 2.6
   spyOnProperty: false
 };
+
+export default exports;

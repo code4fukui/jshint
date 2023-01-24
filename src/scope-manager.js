@@ -1,4 +1,3 @@
-"use strict";
 /**
  * A note on `__proto__`:
  *
@@ -16,8 +15,9 @@
  * coverage is verified (i.e. Node.js).
  */
 
-var _      = require("lodash");
-var events = require("events");
+import _ from "./lodash.js";
+import EventEmitter from "https://code4fukui.github.io/events/events.js";
+const events = { EventEmitter };
 
 // Used to denote membership in lookup tables (a primitive value such as `true`
 // would be silently rejected for the property name "__proto__" in some
@@ -1046,4 +1046,4 @@ var scopeManager = function(state, predefined, exported, declared) {
   return scopeManagerInst;
 };
 
-module.exports = scopeManager;
+export default scopeManager;

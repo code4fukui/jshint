@@ -2,20 +2,22 @@
  * Lexical analysis and token construction.
  */
 
-"use strict";
+import _ from "./lodash.js";
+import EventEmitter from "https://code4fukui.github.io/events/events.js";
+import reg from "./reg.js";
+import state from "./state.js";
+import unicodeData from "../data/ascii-identifier-data.js";
+import nonAsciiIdentifierStartTable from "../data/non-ascii-identifier-start.js";
+import nonAsciiIdentifierPartTable from "../data/non-ascii-identifier-part-only.js";
+import es5IdentifierNames from "../data/es5-identifier-names.js";
 
-var _      = require("lodash");
-var events = require("events");
-var reg    = require("./reg.js");
-var state  = require("./state.js").state;
+const events = { EventEmitter };
 
-var unicodeData = require("../data/ascii-identifier-data.js");
 var asciiIdentifierStartTable = unicodeData.asciiIdentifierStartTable;
 var asciiIdentifierPartTable = unicodeData.asciiIdentifierPartTable;
-var nonAsciiIdentifierStartTable = require("../data/non-ascii-identifier-start.js");
-var nonAsciiIdentifierPartTable = require("../data/non-ascii-identifier-part-only.js");
+
 // Loading of this module is deferred as an optimization for ES2015 input
-var es5IdentifierNames;
+//var es5IdentifierNames;
 
 // Some of these token types are from JavaScript Parser API
 // while others are specific to JSHint parser.
@@ -725,7 +727,6 @@ Lexer.prototype = {
     value = removeEscapeSequences(id);
 
     if (!state.inES6(true)) {
-      es5IdentifierNames = require("../data/es5-identifier-names.js");
 
       if (!es5IdentifierNames.test(value)) {
         this.triggerAsync(
@@ -2300,5 +2301,4 @@ Lexer.prototype = {
   }
 };
 
-exports.Lexer = Lexer;
-exports.Context = Context;
+export { Lexer, Context };

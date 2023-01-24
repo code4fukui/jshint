@@ -4,7 +4,7 @@
 
 /*jshint maxlen:1000 */
 
-"use strict";
+const exports = {};
 
 // Unsafe comment or string (ax)
 exports.unsafeString =
@@ -55,3 +55,5 @@ exports.regexpCharClasses = /[dDsSwWpP]/;
 
 // Identifies the "dot" atom in regular expressions
 exports.regexpDot = /(^|[^\\])(\\\\)*\./;
+
+export default exports;

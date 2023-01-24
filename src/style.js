@@ -1,4 +1,4 @@
-"use strict";
+const exports = {};
 
 exports.register = function(linter) {
   // Check for properties named __proto__. This special property was
@@ -142,3 +142,5 @@ exports.register = function(linter) {
     }
   });
 };
+
+export default exports;

@@ -30,22 +30,24 @@
 /*jshint quotmark:double */
 /*exported console */
 
-var _            = require("lodash");
-var events       = require("events");
-var vars         = require("./vars.js");
-var messages     = require("./messages.js");
-var Lexer        = require("./lex.js").Lexer;
-var reg          = require("./reg.js");
-var state        = require("./state.js").state;
-var style        = require("./style.js");
-var options      = require("./options.js");
-var scopeManager = require("./scope-manager.js");
-var prodParams   = require("./prod-params.js");
+import _ from "./lodash.js";
+import EventEmitter from "https://code4fukui.github.io/events/events.js";
+import vars from "./vars.js";
+import messages from "./messages.js";
+import { Lexer } from "./lex.js";
+import reg from "./reg.js";
+import state from "./state.js";
+import style from "./style.js";
+import options from "./options.js";
+import scopeManager from "./scope-manager.js";
+import prodParams from "./prod-params.js";
+
+const events = { EventEmitter };
 
 // We need this module here because environments such as IE and Rhino
 // don't necessarily expose the 'console' API and browserify uses
 // it to log things. It's a sad state of affair, really.
-var console = require("console-browserify");
+//var console = require("console-browserify");
 
 // We build the application inside a function so that we produce only a singleton
 // variable. That function will be invoked immediately, and its return value is
@@ -6761,7 +6763,4 @@ var JSHINT = (function() {
   return itself;
 }());
 
-// Make JSHINT a Node module, if possible.
-if (typeof exports === "object" && exports) {
-  exports.JSHINT = JSHINT;
-}
+export default JSHINT;
