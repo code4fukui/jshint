@@ -14,3 +14,7 @@ coverage/
 # The following directory is created when validating the project website using
 # the command `npm run test-website`
 tests/jshint.com/
+
+# auto-added by meta-ops
+.DS_Store
+Thumbs.db
